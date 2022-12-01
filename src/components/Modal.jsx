@@ -33,12 +33,6 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
         guardarGasto({ nombre, cantidad, categoria })
     }
 
-    const generarID = () => {
-        const random = Math.random().toString(36).substring(2) 
-        const fecha = Date.now().toString(36) 
-        return fecha + random
-      }
-
   return (
     <div className="modal">
       <div className="cerrar-modal">
