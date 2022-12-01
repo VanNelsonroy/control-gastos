@@ -4,15 +4,19 @@ export const generarID = () => {
     return fecha + random
 }
 
-/*
-<option value="0">-- Seleccione --</option>
-<option value="1">Ahorro</option>
-<option value="2">Comida</option>
-<option value="3">Casa</option>
-<option value="4">Varios</option>
-<option value="5">Ocio</option>
-<option value="6">Salud</option>
-<option value="7">Subscrpciones</option>
-*/
+export const formatearFecha = fecha => {
+    const fechaNueva = new Date(fecha)
+    const opciones = {
+        year : 'numeric',
+        month: 'long',
+        day: '2-digit'
+    }
+    return fechaNueva.toLocaleDateString('es-MX', opciones)
+}
+
+export const formatCantidad = (num) => {
+    return num.toLocaleString("en-US", {style:"currency", currency:"USD"});
+}
+
 
 export const categorias = ['Sin Categoria', 'Ahorro', 'Comida', 'Casa', 'Varios', 'Ocio', 'Salud', 'Subscrpciones']
