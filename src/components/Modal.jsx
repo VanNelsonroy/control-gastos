@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Mensaje from './Mensaje'
 import btnCerrar from '../img/cerrar.svg'
-
+import { categorias } from '../helpers'
 
 const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
 
@@ -68,14 +68,13 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
                 id="txtCategoria"
                 value={ categoria }
                 onChange={ (e) => setCategoria(Number(e.target.value)) }>
-                <option value="0">-- Seleccione --</option>
-                <option value="1">Ahorro</option>
-                <option value="2">Comida</option>
-                <option value="3">Casa</option>
-                <option value="4">Varios</option>
-                <option value="5">Ocio</option>
-                <option value="6">Salud</option>
-                <option value="7">Subscrpciones</option>
+                {
+                    categorias.map( (cate, index) => (
+                        index === 0 ?
+                            <option key={index} value={index}>-- {cate} --</option>
+                        :   <option key={index} value={index}>{cate}</option>
+                    ))
+                }
             </select>
         </div>
         <input type="submit" value="Agregar gasto" />

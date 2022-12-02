@@ -19,4 +19,4 @@ export const formatCantidad = (num) => {
 }
 
 
-export const categorias = ['Sin Categoria', 'Ahorro', 'Comida', 'Casa', 'Varios', 'Ocio', 'Salud', 'Subscrpciones']
+export const categorias = ['Seleccione', 'Ahorro', 'Comida', 'Casa', 'Varios', 'Ocio', 'Salud', 'Suscripciones']
