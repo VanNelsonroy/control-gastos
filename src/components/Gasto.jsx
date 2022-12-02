@@ -27,17 +27,27 @@ const diccionarioIconos = [
     IconSuscripciones
 ]
 
-const Gasto = ({ gasto }) => {
+const Gasto = ({ gasto, setModal, setAnimarModal }) => {
+
+    const testModal = () => {
+        setModal(true)
+
+        setTimeout(() => {
+            setAnimarModal(true)
+        }, 500); 
+    }
 
     const {id, nombre, cantidad, categoria, fecha } = gasto  
 
     const leadingActions = () => (
         <LeadingActions>
-          <SwipeAction onClick={() => console.info('swipe action triggered')}>
+          <SwipeAction 
+            onClick={ testModal }
+          >
             Editar
           </SwipeAction>
         </LeadingActions>
-      );
+      )
       
       const trailingActions = () => (
         <TrailingActions>
@@ -48,7 +58,7 @@ const Gasto = ({ gasto }) => {
             Borrar
           </SwipeAction>
         </TrailingActions>
-      );
+      )
     return (
         <SwipeableList>
             <SwipeableListItem

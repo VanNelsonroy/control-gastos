@@ -13,6 +13,8 @@ function App() {
   const [ animarModal, setAnimarModal ] = useState(false)
   const [gastos, setGastos] = useState([])
 
+  const [ gastoEditar, setGastoEditar ] = useState({})
+
   const handleNuevoGasto = () =>{
     setModal(true)
 
@@ -46,7 +48,9 @@ function App() {
         <>
           <main>
             <ListadoGastos 
-              gastos={ gastos } />
+              gastos={ gastos }
+              setModal={ setModal }
+              setAnimarModal={ setAnimarModal } />
           </main>
           <div className='nuevo-gasto'>
             <img 
