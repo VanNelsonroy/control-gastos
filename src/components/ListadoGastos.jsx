@@ -1,6 +1,7 @@
 import Gasto from "./Gasto"
 
-const ListadoGastos = ({ gastos, setModal, setAnimarModal }) => {
+const ListadoGastos = ({ gastos, setGastoEditar, eliminarGasto, filtro, gastosFiltrados }) => {
+
   return (
     <div className="listado-gastos contenedor">
         <h2>{ gastos.length ? 'Gastos':'No hay gastos aun' }</h2>
@@ -8,8 +9,8 @@ const ListadoGastos = ({ gastos, setModal, setAnimarModal }) => {
             <Gasto
                 key={gasto.id}
                 gasto={gasto}
-                setModal={ setModal }
-                setAnimarModal={ setAnimarModal }
+                setGastoEditar={ setGastoEditar }
+                eliminarGasto={ eliminarGasto }
             />
         ))}
     </div>
