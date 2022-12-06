@@ -14,7 +14,7 @@ const Filtros = ({ filtro, setFiltro}) => {
                 {
                     categorias.map( (cate, index) => (
                         index === 0 ?
-                            <option key={index} value={index}>-- {cate} --</option>
+                            <option key={index} value={index}>-- Todas las categorias --</option>
                         :   <option key={index} value={index}>{cate}</option>
                     ))
                 }

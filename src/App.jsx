@@ -85,8 +85,8 @@ function App() {
 
   useEffect(() => {
     if(filtro > 0){
-      const gastosFiltrados = gastos.filter( gasto => gasto.categoria === filtro)
-      setGastosFiltrados(gastosFiltrados)
+      const filtrados = gastos.filter( gasto => gasto.categoria === filtro)
+      setGastosFiltrados(filtrados)
     }
   }, [filtro])
 
@@ -97,7 +97,8 @@ function App() {
         setPresupuesto={setPresupuesto}
         isValidPresupuesto={isValidPresupuesto}
         setIsValidPresupuesto={setIsValidPresupuesto}
-        gastos={ gastos } />
+        gastos={ gastos }
+        setGastos={setGastos} />
       
       {isValidPresupuesto &&(
         <>
